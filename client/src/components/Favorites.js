@@ -28,7 +28,7 @@ class Favorites extends React.Component{
         let savedTrackScroll = this.state.savedTracks.map(trackObj => <SavedCard song={trackObj}/>)
         return(
             <div>
-                <button onClick={() => this.getSavedTracks()}>Saved Tracks</button>
+                <button onClick={() => this.getSavedTracks()} class="ui inverted button">Saved Tracks</button>
                 <div className="My-playlist-scroll">
                 {savedTrackScroll}
                 </div>

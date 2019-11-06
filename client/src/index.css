@@ -98,3 +98,9 @@ code {
   text-align: center;
   margin: 5px;
 }
+
+/* SUGGESTION AREA */
+
+.Suggestion-box {
+  background: black;
+}

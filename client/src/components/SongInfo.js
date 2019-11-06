@@ -18,8 +18,6 @@ class SongInfo extends React.Component{
     audioFeatures(){
         spotifyWebApi.getAudioFeaturesForTrack(this.props.uri)
         .then((response) => {
-            console.log('clicked!')
-            console.log("audio features:", response)
             this.setState({
                 acousticness: response.acousticness,
                 danceability: response.danceability,
@@ -29,11 +27,10 @@ class SongInfo extends React.Component{
                 loudness: response.loudness,
                 speechiness: response.speechiness
             })
-            console.log(this.state)
         })
     }
 
-    
+
 
 
     render() {
@@ -53,7 +50,7 @@ class SongInfo extends React.Component{
         <div>
             <br></br>
             {songBreakdown}
-            <button onClick={() => this.audioFeatures()}>
+            <button onClick={() => this.audioFeatures()} class="ui inverted button">
                 Get Song Info
             </button>
         </div>

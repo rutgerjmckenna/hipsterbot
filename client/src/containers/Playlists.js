@@ -40,11 +40,12 @@ class Playlists extends React.Component{
     render() {
         return(
             <div>
-                <button onClick={() => this.addToSaved()}>
+                <button onClick={() => this.addToSaved()} class="ui inverted button">
                     Add to Saved
                 </button>
                 <br></br>
-                <button onClick={() => this.removeFromSaved()}>
+                <br></br>
+                <button onClick={() => this.removeFromSaved()} class="ui inverted button">
                     Remove from Saved
                 </button>
             </div>

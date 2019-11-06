@@ -38,7 +38,7 @@ class RelatedArtists extends React.Component {
         return(
             <body className="Suggestion-box">
                 <Suggestion uri={this.state.foundTrackUri}/>
-                <button onClick={() => this.topTracks()} className="Find-artist-button">
+                <button onClick={() => this.topTracks()} class="ui inverted button">
                     Find Artist
                 </button>
                 <br></br>

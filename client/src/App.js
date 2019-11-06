@@ -5,6 +5,7 @@ import Player from './components/Player';
 import Follower from './components/Follower';
 import Favorites from './components/Favorites'
 import SearchContainer from './containers/SearchContainer'
+import './Semantic-UI-CSS-master/semantic.min.css'
 import Spotify from 'spotify-web-api-js'
 
 const spotifyWebApi = new Spotify();
@@ -105,12 +106,19 @@ class App extends React.Component{
 
   render() {
     //User Info
+    let myProfile =
+    <h2 class="ui header">
+      <img src={this.state.userInfo.image} class="ui circular image" />
+      {this.state.userInfo.name}
+    </h2>
+
+
     let myInfo = <div>
       <img src={this.state.userInfo.image} alt='' className="Profile-img"/>
       <h1 className="Profile-name">{this.state.userInfo.name}</h1>
       <h5 className="Profile-name">Followers {this.state.userInfo.followers}</h5>
       <a href={this.state.userInfo.spotifyUrl} className="Profile-name">
-        <button>Open Spotify</button>
+        <button class="ui inverted button">Open Spotify</button>
       </a>
       <Favorites/>
     </div>
@@ -123,19 +131,19 @@ class App extends React.Component{
     return (
       <div className="App">
           <a href="http://localhost:8888" className="Login">
-            <button>Login With Current Active Spotify Account</button>
+            <button class="ui inverted button">Login With Current Active Spotify Account</button>
           </a>
         <br></br>
             {myInfo}
         <br></br>
         <br></br>
-          <button onClick={() => this.getNowPlaying()} className="Now-playing">
+          <button onClick={() => this.getNowPlaying()} class="ui inverted button">
             Check Now Playing
           </button>
         <br></br>
         <br></br>
         <br></br>
-          <button onClick={() => this.skipToNextSong()} className="Now-playing">Skip To Next Song</button>
+          <button onClick={() => this.skipToNextSong()} class="ui inverted button">Skip To Next Song</button>
         <br></br>
         <br></br>
             <div className="Now-name">
