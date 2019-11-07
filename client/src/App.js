@@ -3,8 +3,7 @@ import './App.css';
 import RelatedArtists from './containers/RelatedArtists'
 import Player from './components/Player';
 import Follower from './components/Follower';
-import Favorites from './components/Favorites'
-import SearchContainer from './containers/SearchContainer'
+import Favorites from './containers/Favorites'
 import './Semantic-UI-CSS-master/semantic.min.css'
 import Spotify from 'spotify-web-api-js'
 
@@ -25,7 +24,8 @@ class App extends React.Component{
         deviceId: '',
         artistId: '',
         albumUri: '',
-        artistUri: ''
+        artistUri: '',
+        trackId: ''
       },
       userInfo: {
         name: '',
@@ -54,7 +54,6 @@ class App extends React.Component{
   componentDidMount(){
     spotifyWebApi.getUser('rubbermchenna')
     .then((response) => {
-      console.log("user info:", response)
       this.setState({userInfo: {
         name: response.display_name,
         image: response.images[0].url,
@@ -77,7 +76,8 @@ class App extends React.Component{
           deviceId: response.device.id,
           artistId: response.item.artists[0].id,
           albumUri: response.item.album.uri,
-          artistUri: response.item.artists[0].uri
+          artistUri: response.item.artists[0].uri,
+          trackId: response.item.id
         }})
         this.getRelatedArtists()
       })
@@ -106,6 +106,8 @@ class App extends React.Component{
 
   render() {
     //User Info
+    let currentUri = this.state.nowPlaying.trackId
+    
     let myProfile =
     <h2 class="ui header">
       <img src={this.state.userInfo.image} class="ui circular image" />
@@ -165,7 +167,7 @@ class App extends React.Component{
         <br></br>
             <Player uri={this.state.nowPlaying.albumUri}/>
         <br></br>
-            <RelatedArtists id={this.state.relatedArtists} className="Suggestion-box"/>
+            <RelatedArtists id={this.state.relatedArtists} nowPlayingUri={currentUri} className="Suggestion-box"/>
             <br></br>
             <br></br>
             <br></br>

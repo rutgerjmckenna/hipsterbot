@@ -16,7 +16,6 @@ class Playlists extends React.Component{
         spotifyWebApi.getUserPlaylists('rubbermchenna')
         .then((response) => {
             let starred = response.items[0]
-            console.log(starred)
             this.setState({starredPlaylist: starred})
         })
     }

@@ -1,6 +1,6 @@
 import React from 'react';
 import Spotify from 'spotify-web-api-js'
-import SavedCard from './SavedCard'
+import SavedCard from '../components/SavedCard'
 
 const spotifyWebApi = new Spotify();
 

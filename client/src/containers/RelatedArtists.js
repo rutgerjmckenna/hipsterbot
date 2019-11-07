@@ -1,6 +1,5 @@
 import React from 'react';
 import Spotify from 'spotify-web-api-js'
-import RelatedCard from '../components/RelatedCard'
 import Playlists from './Playlists'
 import Suggestion from '../components/Suggestion'
 import SongInfo from '../components/SongInfo'
@@ -42,7 +41,7 @@ class RelatedArtists extends React.Component {
                     Find Artist
                 </button>
                 <br></br>
-                <SongInfo uri={this.state.foundTrackUri}/>
+                <SongInfo uri={this.state.foundTrackUri} nowPlayingUri={this.props.nowPlayingUri}/>
                 <br></br>
                 <Playlists uri={this.state.foundTrackUri}/>
                 <br></br>

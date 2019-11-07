@@ -12,7 +12,7 @@ const Player = (props) => {
     let showPlayer = props.uri === '' ? '' : <iframe src={`https://open.spotify.com/embed/album/${mySrc}`} title='player' width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media" className="Player"></iframe>
 
     return(
-        <body>
+        <body className="Player">
             {showPlayer}
         </body>
     )
