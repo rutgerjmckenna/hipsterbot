@@ -122,6 +122,7 @@ class SongInfo extends React.Component{
 
 
     render() {
+        console.log(this.state.features)
 
         let dance = this.state.features.danceability > this.state.nowFeatures.danceability ? <p> easier to dance to </p> : <p> less danceable </p>
         let energy = this.state.features.energy > this.state.nowFeatures.energy ? <p> more energetic </p> : <p> less energetic </p>
@@ -132,7 +133,7 @@ class SongInfo extends React.Component{
 
         let advice = this.state.features.acousticness === '' ? '' :
         <div className="White-font">
-            <h3>Beep boop! I have music 4 U!</h3>
+            <h3>Beep boop!</h3>
             <img src={this.state.songInfo.albumImage} alt="" style={{width: 250}}/>
             <h2>{this.state.songInfo.songName}</h2>
             <h4>by</h4>
