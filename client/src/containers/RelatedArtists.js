@@ -22,7 +22,6 @@ class RelatedArtists extends React.Component {
                 this.setState({foundTrackUri: topTrackUri})
             })
     }
-
     // addToStarred(){
     //     spotifyWebApi.addToMySavedTracks(this.state.foundTrackUri)
     //     .then((response) => {

@@ -122,7 +122,6 @@ class SongInfo extends React.Component{
 
 
     render() {
-        console.log(this.state.features)
 
         let dance = this.state.features.danceability > this.state.nowFeatures.danceability ? <p> easier to dance to </p> : <p> less danceable </p>
         let energy = this.state.features.energy > this.state.nowFeatures.energy ? <p> more energetic </p> : <p> less energetic </p>
@@ -138,6 +137,7 @@ class SongInfo extends React.Component{
             <h2>{this.state.songInfo.songName}</h2>
             <h4>by</h4>
             <h2>{this.state.songInfo.artistName}</h2>
+            <br></br>
             <br></br>
             {dance}
             {energy}

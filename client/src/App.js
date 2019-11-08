@@ -5,6 +5,7 @@ import Player from './components/Player';
 import Follower from './components/Follower';
 import Favorites from './containers/Favorites'
 import './Semantic-UI-CSS-master/semantic.min.css'
+import { Grid, Image } from 'semantic-ui-react'
 import Spotify from 'spotify-web-api-js'
 
 const spotifyWebApi = new Spotify();
