@@ -1,5 +1,6 @@
 import React from 'react';
 import Spotify from 'spotify-web-api-js'
+import { Button } from 'semantic-ui-react';
 
 const spotifyWebApi = new Spotify();
 
@@ -38,15 +39,15 @@ class Playlists extends React.Component{
 
     render() {
         return(
-            <div>
-                <button onClick={() => this.addToSaved()} class="ui inverted button">
-                    Add to Saved
-                </button>
-                <br></br>
-                <br></br>
-                <button onClick={() => this.removeFromSaved()} class="ui inverted button">
-                    Remove from Saved
-                </button>
+            <div class="ui buttons">
+                <Button.Group compact>
+                <Button onClick={() => this.addToSaved()} color='black' style={{fontFamily: 'outrun future', color: 'DeepPink', fontSize: '20px'}}>
+                    Save
+                </Button>
+                <Button onClick={() => this.removeFromSaved()} color='black' style={{fontFamily: 'outrun future', color: 'Aqua', fontSize: '20px'}}>
+                    Remove
+                </Button>
+                </Button.Group>
             </div>
         )
     }

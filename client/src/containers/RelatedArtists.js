@@ -33,17 +33,21 @@ class RelatedArtists extends React.Component {
 
     render() {
         // let allRelated = this.state.relatedArtists.map(artist => <RelatedCard name={artist.name} pic={artist.images[0].url} key=''/>)
+
+        let saved = this.state.foundTrackUri !== '' ? <h2 style={{fontFamily: 'outrun future', color: 'Aqua', fontSize: '30px'}}>Add to saved tracks?</h2> : ''
+
+
         return(
-            <body className="Suggestion-box">
-                <Suggestion uri={this.state.foundTrackUri}/>
-                <button onClick={() => this.topTracks()} class="ui inverted button">
+            <body className="Suggest-body">
+                <button onClick={() => this.topTracks()} class="ui black button" style={{fontFamily: 'morning star', color: 'DeepPink', fontSize: '20px'}}>
                     Find Artist
                 </button>
+                <br></br>
+                <Suggestion uri={this.state.foundTrackUri} style={{float: 'left', margin: '0px'}}/>
                 <br></br>
                 <SongInfo uri={this.state.foundTrackUri} nowPlayingUri={this.props.nowPlayingUri}/>
                 <br></br>
                 <Playlists uri={this.state.foundTrackUri}/>
-                <br></br>
             </body>
         )
     }

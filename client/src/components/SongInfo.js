@@ -64,6 +64,7 @@ class SongInfo extends React.Component{
         this.getSong()
         this.getNowSong()
         this.audioFeaturesNowPlaying()
+
     }
 
 
@@ -123,21 +124,28 @@ class SongInfo extends React.Component{
 
     render() {
 
-        let dance = this.state.features.danceability > this.state.nowFeatures.danceability ? <p> easier to dance to </p> : <p> less danceable </p>
-        let energy = this.state.features.energy > this.state.nowFeatures.energy ? <p> more energetic </p> : <p> less energetic </p>
-        let loud = this.state.features.loudness > this.state.nowFeatures.loudness ? <p> louder </p> : <p> softer </p>
-        let talky = this.state.features.speechiness > this.state.nowFeatures.speechiness ? <p> has more lyrics </p> : <p> has less lyrics </p>
-        let instrumental = this.state.features.instrumentalness > this.state.nowFeatures.instrumentalness ? <p> more instrumental </p> : <p> less instrumental </p>
-        let acoustic = this.state.features.acousticness > this.state.nowFeatures.acousticness ? <p> more acoustic </p> : <p> less acoustic </p>
+        let dance = this.state.features.danceability > this.state.nowFeatures.danceability ? <p style={{fontFamily: 'morning star', color: 'DeepPink', fontSize: '30px', margin: '0px'}}> more danceable</p> : <h2 style={{fontFamily: 'morning star', color: 'DeepPink', fontSize: '30px', margin: '0px'}}> less danceable </h2>
+        let energy = this.state.features.energy > this.state.nowFeatures.energy ? <p style={{fontFamily: 'morning star', color: 'DeepPink', fontSize: '30px', margin: '0px'}}> more energetic </p> : <p style={{fontFamily: 'morning star', color: 'DeepPink', fontSize: '30px', margin: '0px'}}> less energetic </p>
+        let loud = this.state.features.loudness > this.state.nowFeatures.loudness ? <p style={{fontFamily: 'morning star', color: 'DeepPink', fontSize: '30px', margin: '0px'}}> louder </p> : <p style={{fontFamily: 'morning star', color: 'DeepPink', fontSize: '30px', margin: '0px'}}> softer </p>
+        let talky = this.state.features.speechiness > this.state.nowFeatures.speechiness ? <p style={{fontFamily: 'morning star', color: 'DeepPink', fontSize: '30px', margin: '0px'}}> more lyrical </p> : <p style={{fontFamily: 'morning star', color: 'DeepPink', fontSize: '30px', margin: '0px'}}> less lyrical </p>
+        let instrumental = this.state.features.instrumentalness > this.state.nowFeatures.instrumentalness ? <p style={{fontFamily: 'morning star', color: 'DeepPink', fontSize: '30px', margin: '0px'}}> more instrumental </p> : <p style={{fontFamily: 'morning star', color: 'DeepPink', fontSize: '30px', margin: '0px'}}> less instrumental </p>
+        let acoustic = this.state.features.acousticness > this.state.nowFeatures.acousticness ? <p style={{fontFamily: 'morning star', color: 'DeepPink', fontSize: '30px', margin: '0px'}}> more acoustic </p> : <p style={{fontFamily: 'morning star', color: 'DeepPink', fontSize: '30px', margin: '0px'}}> less acoustic </p>
 
         let advice = this.state.features.acousticness === '' ? '' :
-        <div className="White-font">
-            <h3>Beep boop!</h3>
-            <img src={this.state.songInfo.albumImage} alt="" style={{width: 250}}/>
-            <h2>{this.state.songInfo.songName}</h2>
-            <h4>by</h4>
-            <h2>{this.state.songInfo.artistName}</h2>
+        <div>
+            <br>
+            </br>
+            <h2 style={{fontFamily: 'outrun future', color: 'Aqua', fontSize: '40px'}}>{this.state.songInfo.songName}</h2>
+            <h4 style={{fontFamily: 'morning star', color: 'DeepPink', fontSize: '20px'}}>by</h4>
+            <h2 style={{fontFamily: 'outrun future', color: 'Aqua', fontSize: '30px'}}>{this.state.songInfo.artistName}</h2>
+            <br>
+            </br>
+            <br>
+            </br>
+            <img src={this.state.songInfo.albumImage} alt="" style={{width: '100%', borderStyle: 'solid', borderColor: '#ff009a', borderWidth: '5px', position: 'relative', boxShadow: '0 0 15px #ff009a, 0 0 20px #ff009a, 0 0 20px #ff009a'}}/>
             <br></br>
+            <br></br>
+            <h2 style={{fontFamily: 'outrun future', color: 'Aqua', fontSize: '30px'}}>This song is</h2>
             <br></br>
             {dance}
             {energy}
@@ -145,6 +153,7 @@ class SongInfo extends React.Component{
             {talky}
             {instrumental}
             {acoustic}
+            <h2 style={{fontFamily: 'outrun future', color: 'Aqua', fontSize: '30px'}}>than yours</h2>
         </div>
 
 
@@ -162,7 +171,7 @@ class SongInfo extends React.Component{
 
 
         let songBreakdown = this.state.acousticness === '' ? '' :
-        <ul className="White-font">
+        <ul>
             <li>Acousticness: {this.state.acousticness}</li>
             <li>Danceability: {this.state.danceability}</li>
             <li>Energy: {this.state.energy}</li>
@@ -173,12 +182,12 @@ class SongInfo extends React.Component{
         </ul>
 
         return(
-        <div>
+        <div  className='Song-info'>
             <br></br>
-            {advice}
-            <button onClick={() => this.audioFeatures()} class="ui inverted button">
+            <button onClick={() => this.audioFeatures()} class="ui black button" style={{fontFamily: 'morning star', color: 'DeepPink', fontSize: '20px'}}>
                 Get Song Info
             </button>
+            {advice}
         </div>
     )}
 }
