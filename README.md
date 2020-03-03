@@ -4,7 +4,7 @@ This repo uses a Spotify API token that is private to me in the development stag
 
 ![alt text](https://i.imgur.com/E7mqFgM.png)
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------------------
 
 ![alt text](https://i.imgur.com/bMLZa62.png)
 
